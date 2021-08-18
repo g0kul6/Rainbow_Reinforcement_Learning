@@ -1,5 +1,5 @@
 # Spider_Introduction_Task
-Rainbow
+# Rainbow
 List of algorithms:
 • DQN
 • Double DQN
