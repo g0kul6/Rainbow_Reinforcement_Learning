@@ -1,5 +1,5 @@
 #for Deep Q-learning network
-from environment import env
+from parameter import env
 #importing necessary packages
 
 
