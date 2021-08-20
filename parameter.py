@@ -7,7 +7,7 @@ env = gym.make('CartPole-v0')
 state_size=env.observation_space.shape[0]
 action_size=env.action_space.n
 
-#batch size
+#batch size for optimization
 batch_size=32
 
 #numer of episodes for training
