@@ -11,5 +11,8 @@ action_size=env.action_space.n
 batch_size=32
 
 #numer of episodes for training
-n_episodes=1001
+n_episodes=20000
+
+#experience replay size for replay buffer
+replay_size=256
 
