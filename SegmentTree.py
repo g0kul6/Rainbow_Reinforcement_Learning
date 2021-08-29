@@ -20,9 +20,11 @@ class SegmentTree:
             else:
                 return self.operation(self._operate_helper(start, mid, 2 * node, node_start, mid),self._operate_helper(mid + 1, end, 2 * node + 1, mid + 1, node_end))
     
-    def operate(self, start=0, end=0):
+    def operate(self, start=0, end=None):
         #results for self.operation
-        if end <= 0:
+        if end is None:
+            end = self.capacity
+        if end < 0:
             end += self.capacity
         end -= 1
         return self._operate_helper(start, end, 1, 0, self.capacity - 1)
@@ -45,7 +47,7 @@ class SumSegmentTree(SegmentTree):
     def __init__(self, capacity):
         super(SumSegmentTree, self).__init__(capacity=capacity, operation=operator.add, init_value=0.0)
     
-    def sum(self,start,end):
+    def sum(self,start=0,end=None):
         #for finding sum "arr[start]+...+arr[end]"
         return super(SumSegmentTree, self).operate(start, end)
 
@@ -67,6 +69,7 @@ class MinSegmentTree(SegmentTree):
     def __init__(self,capacity):
         super(MinSegmentTree, self).__init__(capacity=capacity, operation=min, init_value=float("inf"))
     
-    def min(self, start=0,end=0):
+    def min(self, start=0,end=None):
         #to find min of (arr[start],...,arr[end])
         return super(MinSegmentTree, self).operate(start, end)
+
